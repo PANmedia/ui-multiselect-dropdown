@@ -23,7 +23,7 @@
   var multiselectID = 0;
   var $doc = $(document);
 
-  $.widget("ech.multiselect", {
+  $.widget("ech.multiselectDropdown", {
 
     // default options
     options: {
@@ -233,7 +233,7 @@
       return value;
     },
 
-    // this exists as a separate method so that the developer 
+    // this exists as a separate method so that the developer
     // can easily override it.
     _setButtonValue: function(value) {
       this.buttonlabel.text(value);
