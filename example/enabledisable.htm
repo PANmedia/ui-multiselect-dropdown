@@ -14,10 +14,10 @@
 <script type="text/javascript">
 $(function(){
 
-	var $widget = $("select").multiselect(), state = true;
+	var $widget = $("select").multiselectDropdown(), state = true;
 	$("#toggle-disabled").click(function(){
 		state = !state;
-		$widget.multiselect(state ? 'disable' : 'enable');
+		$widget.multiselectDropdown(state ? 'disable' : 'enable');
 	});
 
 });
@@ -28,12 +28,12 @@ $(function(){
 <h2>Enable/Disable Widget</h2>
 <p>Programmatically calling the disable and enable methods.</p>
 <pre class="prettyprint">
-var $widget = $("select").multiselect(), 
+var $widget = $("select").multiselectDropdown(), 
     state = true;
 
 $("#toggle-disabled").click(function(){
    state = !state;
-   $widget.multiselect(state ? 'disable' : 'enable');
+   $widget.multiselectDropdown(state ? 'disable' : 'enable');
 });
 </pre>
 

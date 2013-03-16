@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../src/jquery.multiselect.js"></script>
 <script type="text/javascript">
 $(function(){
-	var el = $("select").multiselect(),
+	var el = $("select").multiselectDropdown(),
 		disabled = $('#disabled'),
 		selected = $('#selected'),
 		newItem = $('#newItem');
@@ -33,7 +33,7 @@ $(function(){
 		
 		opt.appendTo( el );
 		
-		el.multiselect('refresh');
+		el.multiselectDropdown('refresh');
 	});
 });
 </script>
@@ -48,7 +48,7 @@ multiselect widget to reflect the changes.</p>
 
 <pre class="prettyprint">
 // once the "add" button is clicked below:
-$("select").multiselect('refresh');
+$("select").multiselectDropdown('refresh');
 </pre>
 
 <div style="float:left; width:325px">

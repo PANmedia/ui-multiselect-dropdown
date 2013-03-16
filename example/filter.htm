@@ -21,7 +21,7 @@
 <p>Filtering is available by including the <a href="http://github.com/ehynds/jquery-ui-multiselect-widget/raw/master/src/jquery.multiselect.filter.js">jquery.multiselect.filter.js</a> plugin and the <a href="http://github.com/ehynds/jquery-ui-multiselect-widget/raw/master/jquery.multiselect.filter.css">jquery.multiselect.filter.css</a> CSS file.  Initialize filtering on any of your multiselects by calling <code class="prettyprint">multiselectfilter()</code> on the widget.</p>
 
 <pre class="prettyprint">
-$("select").multiselect().multiselectfilter();
+$("select").multiselectDropdown().multiselectfilter();
 </pre>
 
 <form style="margin:20px 0">
@@ -73,7 +73,7 @@ $("select").multiselect().multiselectfilter();
 	<p>To do something when no matches are found:</p>
 	
 <pre class="prettyprint">
-$("select").multiselect().multiselectfilter({
+$("select").multiselectDropdown().multiselectfilter({
     filter: function(event, matches){
         if( !matches.length ){
             // do something
@@ -85,7 +85,7 @@ $("select").multiselect().multiselectfilter({
 	<p>To do something with a match:</p>
 	
 <pre class="prettyprint">
-$("select").multiselect().multiselectfilter({
+$("select").multiselectDropdown().multiselectfilter({
     filter: function(event, matches){
 		
         // find the first matching checkbox
@@ -114,7 +114,7 @@ $("select").bind("multiselectfilterfilter", function(event, matches){
 </ul>
 
 <script type="text/javascript">
-$("select").multiselect().multiselectfilter();
+$("select").multiselectDropdown().multiselectfilter();
 </script>
 
 </body>

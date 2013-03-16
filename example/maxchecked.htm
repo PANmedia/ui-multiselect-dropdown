@@ -15,11 +15,11 @@
 $(function(){
 	var warning = $(".message");
 	
-	$("select").multiselect({ 
+	$("select").multiselectDropdown({ 
 		header: "Choose only TWO items!",
 		click: function(e){
 		
-			if( $(this).multiselect("widget").find("input:checked").length > 2 ){
+			if( $(this).multiselectDropdown("widget").find("input:checked").length > 2 ){
 				warning.addClass("error").removeClass("success").html("You can only check two checkboxes!");
 				return false;
 			} else {
@@ -54,10 +54,10 @@ $(function(){
 <pre class="prettyprint">
 var warning = $(".message");
 
-$("select").multiselect({ 
+$("select").multiselectDropdown({ 
    header: "Choose only TWO items!",
    click: function(e){
-       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
+       if( $(this).multiselectDropdown("widget").find("input:checked").length > 2 ){
            warning.addClass("error").removeClass("success").html("You can only check two checkboxes!");
            return false;
        } else {

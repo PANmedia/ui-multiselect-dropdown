@@ -14,7 +14,7 @@
 <script type="text/javascript">
 $(function(){
 
-	$("select").multiselect({
+	$("select").multiselectDropdown({
 		selectedList: 4
 	});
 	
@@ -29,7 +29,7 @@ $(function(){
 <h3>Using the <code>selectedList</code> Parameter</h3>
 <p>The selectedList parameter is a boolean/numeric value denoting whether or not to display the checked opens in a list, and how many. A number greater than 0 denotes the maximum number of list items to display before switching over to the selectedText parameter.</p>
 <pre class="prettyprint">
-$("select").multiselect({
+$("select").multiselectDropdown({
    selectedList: 4 // 0-based index
 });
 </pre>
@@ -52,7 +52,7 @@ $("select").multiselect({
 the number of checkboxes checked, the total number of checkboxes, and an array of the checkboxes (DOM elements) that were checked.  Example usage:</p>
 
 <pre class="prettyprint">
-$("select").multiselect({
+$("select").multiselectDropdown({
    selectedText: function(numChecked, numTotal, checkedItems){
       return numChecked + ' of ' + numTotal + ' checked';
    }

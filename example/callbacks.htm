@@ -16,7 +16,7 @@ $(function(){
 
 	var $callback = $("#callback");
 	
-	$("select").multiselect({
+	$("select").multiselectDropdown({
 		click: function(event, ui){
 			$callback.text(ui.value + ' ' + (ui.checked ? 'checked' : 'unchecked') );
 		},
@@ -75,7 +75,7 @@ pass in an event handler in the options object upon initialization, or bind to t
 <pre class="prettyprint">
 var $callback = $("#callback");
 
-$("select").multiselect({
+$("select").multiselectDropdown({
    click: function(event, ui){
       $callback.text(ui.value + ' ' + (ui.checked ? 'checked' : 'unchecked') );
    },
