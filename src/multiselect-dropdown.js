@@ -29,7 +29,6 @@
     options: {
       header: true,
       height: 175,
-      minWidth: 225,
       classes: '',
       checkAllText: 'Check all',
       uncheckAllText: 'Uncheck all',
@@ -55,15 +54,16 @@
       // jQuery UI 1.9+, and otherwise fallback to a custom string.
       this._namespaceID = this.eventNamespace || ('multiselect' + multiselectID);
 
-      var button = (this.button = $('<button type="button"><span class="ui-icon ui-icon-triangle-1-s"></span></button>'))
-        .addClass('ui-multiselect ui-widget ui-state-default ui-corner-all')
+      var button = (this.button = $('<button type="button" />'))
+        .addClass('ui-multiselect')
         .addClass(o.classes)
-        .attr({ 'title':el.attr('title'), 'aria-haspopup':true, 'tabIndex':el.attr('tabIndex') })
+        .text(o.noneSelectedText)
+        .button({
+            icons: {
+                secondary: 'ui-icon-triangle-1-s'
+            }
+        })
         .insertAfter(el),
-
-        buttonlabel = (this.buttonlabel = $('<span />'))
-          .html(o.noneSelectedText)
-          .appendTo(button),
 
         menu = (this.menu = $('<div />'))
           .addClass('ui-multiselect-menu ui-widget ui-widget-content ui-corner-all')
@@ -195,10 +195,6 @@
       this.labels = menu.find('label');
       this.inputs = this.labels.children('input');
 
-      // set widths
-      this._setButtonWidth();
-      this._setMenuWidth();
-
       // remember default value
       this.button[0].defaultValue = this.update();
 
@@ -236,7 +232,7 @@
     // this exists as a separate method so that the developer
     // can easily override it.
     _setButtonValue: function(value) {
-      this.buttonlabel.text(value);
+      this.button.button('option', 'label', value);
     },
 
     // binds events
@@ -419,25 +415,6 @@
       $(this.element[0].form).bind('reset.multiselect', function() {
         setTimeout($.proxy(self.refresh, self), 10);
       });
-    },
-
-    // set button width
-    _setButtonWidth: function() {
-      var width = this.element.outerWidth();
-      var o = this.options;
-
-      if(/\d/.test(o.minWidth) && width < o.minWidth) {
-        width = o.minWidth;
-      }
-
-      // set widths
-      this.button.outerWidth(width);
-    },
-
-    // set menu width
-    _setMenuWidth: function() {
-      var m = this.menu;
-      m.outerWidth(this.button.outerWidth());
     },
 
     // move up or down within the menu
@@ -702,11 +679,6 @@
           break;
         case 'height':
           menu.find('ul').last().height(parseInt(value, 10));
-          break;
-        case 'minWidth':
-          this.options[key] = parseInt(value, 10);
-          this._setButtonWidth();
-          this._setMenuWidth();
           break;
         case 'selectedText':
         case 'selectedList':
