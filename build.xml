@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PAN UI Multiselect Dropdown" default="build">
+    <target name="build">
+        <mkdir dir="${phing.dir.pan_ui_multiselect_dropdown}/packages" />
+        <phingcall target="css" />
+        <phingcall target="cssdev" />
+        <phingcall target="js" />
+        <phingcall target="jsdev" />
+    </target>
+
+    <adhoc-task name="scss">
+        require_once 'vendor/pan/theme/classes/ScssTask.php';
+    </adhoc-task>
+
+    <target name="css" description="Compile and compress all CSS files">
+        <scss
+            scssFile="multiselect-dropdown.scss"
+            cssFile="${phing.dir.pan_ui_multiselect_dropdown}/packages/multiselect.min.css"
+            dir="${phing.dir.pan_ui_multiselect_dropdown}/src"
+            compress="true"
+        />
+    </target>
+
+    <target name="cssdev" description="Compile all CSS files">
+        <scss
+            scssFile="multiselect-dropdown.scss"
+            cssFile="${phing.dir.pan_ui_multiselect_dropdown}/packages/multiselect.css"
+            dir="${phing.dir.pan_ui_multiselect_dropdown}/src"
+        />
+    </target>
+
+    <target name="js" description="Compile and compress all JS">
+        <exec dir="${phing.dir.pan_ui_multiselect_dropdown}" level="info" logoutput="true" command="
+            closure
+                --js src/multiselect-dropdown.js
+                --js_output_file packages/multiselect-dropdown.min.js
+        " />
+    </target>
+
+    <target name="jsdev" description="Compile all JS files">
+        <exec dir="${phing.dir.pan_ui_multiselect_dropdown}" level="info" logoutput="true" command="
+            cat
+                src/multiselect-dropdown.js
+            > packages/multiselect-dropdown.js
+        " />
+    </target>
+</project>
