@@ -15,7 +15,7 @@
     <target name="css" description="Compile and compress all CSS files">
         <scss
             scssFile="multiselect-dropdown.scss"
-            cssFile="${phing.dir.pan_ui_multiselect_dropdown}/packages/multiselect.min.css"
+            cssFile="${phing.dir.pan_ui_multiselect_dropdown}/packages/multiselect-dropdown.min.css"
             dir="${phing.dir.pan_ui_multiselect_dropdown}/src"
             compress="true"
         />
@@ -24,7 +24,7 @@
     <target name="cssdev" description="Compile all CSS files">
         <scss
             scssFile="multiselect-dropdown.scss"
-            cssFile="${phing.dir.pan_ui_multiselect_dropdown}/packages/multiselect.css"
+            cssFile="${phing.dir.pan_ui_multiselect_dropdown}/packages/multiselect-dropdown.css"
             dir="${phing.dir.pan_ui_multiselect_dropdown}/src"
         />
     </target>
