@@ -9,7 +9,7 @@
     </target>
 
     <adhoc-task name="scss">
-        require_once 'vendor/petah/theme/classes/ScssTask.php';
+        require_once 'vendor/pan/theme/classes/ScssTask.php';
     </adhoc-task>
 
     <target name="css" description="Compile and compress all CSS files">
