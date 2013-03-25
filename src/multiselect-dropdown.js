@@ -28,7 +28,7 @@
     // default options
     options: {
       header: true,
-      height: 175,
+      //height: 175,
       classes: '',
       checkAllText: 'Check all',
       uncheckAllText: 'Uncheck all',
@@ -70,6 +70,10 @@
           .addClass(o.classes)
           .appendTo(document.body),
 
+        checkboxContainer = (this.checkboxContainer = $('<ul />'))
+          .addClass('ui-multiselect-checkboxes ui-helper-reset')
+          .appendTo(menu),
+
         header = (this.header = $('<div />'))
           .addClass('ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix')
           .appendTo(menu),
@@ -78,20 +82,15 @@
           .addClass('ui-helper-reset')
           .html(function() {
             if(o.header === true) {
-              return '<li><a class="ui-multiselect-all" href="#"><span class="ui-icon ui-icon-check"></span><span>' + o.checkAllText + '</span></a></li><li><a class="ui-multiselect-none" href="#"><span class="ui-icon ui-icon-closethick"></span><span>' + o.uncheckAllText + '</span></a></li>';
+              return '<li><a class="ui-multiselect-all" href="#"><span class="ui-icon ui-icon-check-all"></span><span>' + o.checkAllText + '</span></a></li><li><a class="ui-multiselect-none" href="#"><span class="ui-icon ui-icon-check-none"></span><span>' + o.uncheckAllText + '</span></a></li>';
             } else if(typeof o.header === "string") {
               return '<li>' + o.header + '</li>';
             } else {
               return '';
             }
           })
-          .append('<li class="ui-multiselect-close"><a href="#" class="ui-multiselect-close"><span class="ui-icon ui-icon-circle-close"></span></a></li>')
-          .appendTo(header),
-
-        checkboxContainer = (this.checkboxContainer = $('<ul />'))
-          .addClass('ui-multiselect-checkboxes ui-helper-reset')
-          .appendTo(menu);
-
+          .append('<li class="ui-multiselect-close"><a href="#" class="ui-multiselect-close"><span class="ui-icon ui-icon-close"></span></a></li>')
+          .appendTo(header);
         // perform event bindings
         this._bindEvents();
 
