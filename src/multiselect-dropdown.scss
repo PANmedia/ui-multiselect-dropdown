@@ -1,5 +1,6 @@
 @import "compass/css3";
 @import "pan/state/default";
+@import "pan/state/title";
 
 .ui-multiselect {
     white-space: nowrap;
@@ -24,8 +25,9 @@
 }
 
 .ui-multiselect-header {
-    margin-bottom: 3px;
     padding: 3px 0 3px 4px;
+    @extend %state-title-alternative-reversed;
+    
     ul {
         font-size: 0.9em;
     }
@@ -52,20 +54,14 @@
 
 .ui-multiselect-menu {
     display: none;
-    padding: 3px;
+    padding: 6px;
     position: absolute;
     z-index: 10000;
     text-align: left;
+    margin-left: -1 * $border-width;
     @extend %state-default;
     @include border-top-left-radius(0);
-
-    label {
-        cursor: pointer;
-    }
-
-    .ui-widget-header {
-        @extend %state-title-alternative;
-    }
+    @include box-shadow($theme-shadow);
 }
 
 .ui-multiselect-checkboxes {
@@ -73,14 +69,16 @@
     overflow-y: auto;
     max-height: 250px;
     margin-bottom: 10px;
+    margin-right: 21px;
     label {
-        cursor: default;
+        cursor: pointer;
         display: block;
         border: 1px solid transparent;
-        padding: 3px 1px;
+        padding: 5px 4px;
         input {
             position: relative;
-            top: 1px;
+            top: 0;
+            margin-right: 7px;
         }
     }
     li {
@@ -101,3 +99,21 @@
     }
 }
 
+.ui-multiselect-none,
+.ui-multiselect-all {
+    display: block;
+    padding: 5px 2px;
+    float: none;
+    clear: both;
+}
+
+.ui-multiselect-close {
+    opacity: 0.8;
+    position: absolute;
+    top: 6px;
+    right: 1px;
+
+    &:hover {
+        opacity: 1;
+    }
+}

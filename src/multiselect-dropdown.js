@@ -89,7 +89,7 @@
               return '';
             }
           })
-          .append('<li class="ui-multiselect-close"><a href="#" class="ui-multiselect-close"><span class="ui-icon ui-icon-close"></span></a></li>')
+          .append('<li class="ui-multiselect-close"><a href="#" class="ui-multiselect-close"><span class="ui-icon ui-icon-closethick"></span></a></li>')
           .appendTo(header);
         // perform event bindings
         this._bindEvents();
