@@ -1,6 +1,7 @@
 @import "compass/css3";
 @import "pan/state/default";
 @import "pan/state/title";
+@import "pan/extension/extensions";
 
 .ui-multiselect {
     white-space: nowrap;
@@ -62,6 +63,10 @@
     @extend %state-default;
     @include border-top-left-radius(0);
     @include box-shadow($theme-shadow);
+
+    ul {
+        @extend %plain-list;
+    }
 }
 
 .ui-multiselect-checkboxes {
@@ -75,10 +80,16 @@
         display: block;
         border: 1px solid transparent;
         padding: 5px 4px;
+        position: relative;
         input {
-            position: relative;
-            top: 0;
-            margin-right: 7px;
+            position: absolute;
+            top: 5px;
+            display: inline-block;
+        }
+        span {
+            color: inherit;
+            display: inline-block;
+            padding-left: 24px;
         }
     }
     li {
