@@ -1,14 +1,10 @@
 {
-    "name": "petah/ui-multiselect-dropdown",
+    "name": "pan/ui-multiselect-dropdown",
     "description": "Multiselect dropdown UI widget.",
-    "keywords": ["ui"],
-    "type": "library",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://vm3.hd1.panmedia.co.nz/satis/"
-        }
+    "keywords": [
+        "ui"
     ],
+    "type": "library",
     "authors": [
         {
             "name": "Eric Hynds",
@@ -21,12 +17,8 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-    },
     "require-dev": {
-        "pan/theme": "dev-tom-refactor",
+        "pan/theme": "dev-master",
         "phing/phing": "dev-master"
-    },
-    "autoload": {
     }
 }
