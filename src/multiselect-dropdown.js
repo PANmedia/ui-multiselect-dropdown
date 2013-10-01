@@ -55,7 +55,7 @@
       this._namespaceID = this.eventNamespace || ('multiselect' + multiselectID);
 
       var button = (this.button = $('<button type="button" />'))
-        .addClass('ui-multiselect')
+        .addClass('ui-multiselect-dropdown')
         .addClass(o.classes)
         .text(o.noneSelectedText)
         .button({
