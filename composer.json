@@ -18,7 +18,6 @@
     ],
     "minimum-stability": "dev",
     "require-dev": {
-        "pan/theme": "dev-master",
-        "phing/phing": "dev-master"
+        "pan/theme": "dev-master"
     }
 }
